@@ -36,13 +36,14 @@ function Login() {
                 body: JSON.stringify(loginInfo)
             });
             const result = await response.json();
-            const { success, message, jwtToken, name,role, error } = result;
+            const { success, message, jwtToken, name, error } = result;
             if (success) {
                 handleSuccess(message);
                 localStorage.setItem('token', jwtToken);
                 localStorage.setItem('loggedInUser', name);
                 localStorage.setItem('role', result.role);
                localStorage.setItem('userId', result.userId);
+               localStorage.setItem('profilePic', result.profilePic);
                console.log(result);
                 setTimeout(() => { if (result.role) {
                     navigate('/home');  // ✅ If role exists, go to home page

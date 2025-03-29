@@ -78,8 +78,8 @@ const Header = () => {
                         </div>
                     )}
                 </div>
-
-                <FaComments className="nav-icon" />
+                <Link to="/homechat" className="nav-icon"><FaComments className="nav-icon" /></Link>
+               
                <Link to="/notifications" ><FaBell className="nav-icon" /></Link>
 
                 {/* Profile Menu */}

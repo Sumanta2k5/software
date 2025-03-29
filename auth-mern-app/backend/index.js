@@ -18,7 +18,8 @@ const feedRoutes = require('./Routes/feedRoutes');
 const NotificationRouter = require('./Routes/notificationRoutes');
 const { upload } = require('./fileUpload'); // Import Multer config
 require('./Models/db'); // Database connection
-
+const messageRoutes = require ("./Routes/message.routes.js");
+const userRoutes = require("./Routes/user.routes.js");
 // Port
 const PORT = process.env.PORT || 8080;
 
@@ -40,7 +41,8 @@ app.use('/api/users', userRouter);
 app.use('/api/interns', searchInternRouter);
 app.use('/feed', feedRoutes);
 app.use('/notifications', NotificationRouter);
-
+app.use("/api/messages", messageRoutes);
+app.use("/api/user", userRoutes);
 // 🆕 Move file upload to `feedRoutes.js`, remove from index.js
 
 // Ping Route

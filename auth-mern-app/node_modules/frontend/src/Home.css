@@ -4,15 +4,15 @@
   padding: 0;
   box-sizing: border-box;
   font-family: Arial, sans-serif;
+  background-color: #f0f2f5;
 }
 
 /* Main Container */
 .home1-container {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   background-color: #f0f2f5;
   padding-top: 80px; /* Prevents text box from hiding under navbar */
-  margin-top: 50px;
 }
 
 /* Left Sidebar (Profile Card) */
@@ -64,9 +64,8 @@
 
 /* Main Content */
 .main-content {
-   /* Leaves space for fixed profile card */
+  margin-left: 300px; /* Leaves space for fixed profile card */
   width: 600px; /* Adjust based on screen size */
-  display: flex;
   max-width: 100%;
 }
 

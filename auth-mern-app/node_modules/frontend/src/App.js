@@ -10,6 +10,8 @@ import ViewProfile from './pages/viewProfile';
 import EditProfile from './pages/editProfile';
 import UserProfile from './pages/UserProfile';
 import Notifications from './pages/Notifications';
+import HomeChat from './pages/home/Home';
+
 
 import './App.css';
 
@@ -30,7 +32,7 @@ function App() {
         <Route path="/edit-profile" element={<EditProfile />} />
         <Route path="/profile/:userId" element={<UserProfile />} />
         <Route path="/notifications" element={<Notifications />} />
-        
+        <Route path="/homechat" element={<HomeChat />} />
       </Routes>
     </div>
   );
