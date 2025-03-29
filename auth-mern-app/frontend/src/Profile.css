@@ -1,0 +1,70 @@
+/* === Layout Update: Move Profile Over Internships === */
+.main-content {
+  display: flex;
+  flex-direction: column; /* Stack profile over internships */
+  align-items: center; /* Center content */
+  gap: 20px;
+}
+
+/* === Profile Section === */
+.profile-card {
+  width: 100%;
+  max-width: 350px; /* Keep profile section compact */
+  margin-bottom: 20px; /* Space between profile and internships */
+}
+.home-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.main-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+/* Profile Section */
+.profile-container {
+  width: 250px;
+  position: fixed;
+  right: 20px;
+  top: 80px;
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
+}
+
+.profile-container:hover {
+  transform: scale(1.05);
+}
+
+/* Left Section */
+.left-section {
+  width: 60%;
+  margin-right: 20px;
+}
+
+.internship-container, .hackathon-container {
+  background: white;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+
+/* Posts Section */
+.posts-container {
+  width: 35%;
+  margin-left: auto;
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.post-card {
+  background: #f9f9f9;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}

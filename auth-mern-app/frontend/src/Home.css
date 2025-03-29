@@ -1,0 +1,205 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* Main Container */
+.home1-container {
+  display: flex;
+  justify-content: center;
+  background-color: #f0f2f5;
+  padding-top: 80px; /* Prevents text box from hiding under navbar */
+  margin-top: 50px;
+}
+
+/* Left Sidebar (Profile Card) */
+.left-sidebar {
+  position: fixed;
+  top: 80px; /* Adjusted based on navbar height */
+  left: 20px;
+  width: 250px;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.profile-pic {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto 10px;
+  object-fit: cover;
+}
+
+.profile-card h3 {
+  font-size: 18px;
+  margin-bottom: 5px;
+  font-weight: bold; /* Make username bold */
+}
+
+.profile-card p {
+  font-size: 14px;
+  color: gray;
+}
+
+.profile-card button {
+  background-color: #1877f2;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.profile-card button:hover {
+  background-color: #165ec6;
+}
+
+/* Main Content */
+.main-content {
+   /* Leaves space for fixed profile card */
+  width: 600px; /* Adjust based on screen size */
+  display: flex;
+  max-width: 100%;
+}
+
+/* Post Form */
+.post-form {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.post-form textarea {
+  width: 100%;
+  height: 60px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  resize: none;
+}
+
+.post-form button {
+  margin-top: 10px;
+  background-color: #1877f2;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  display: block;
+  width: 100px;
+}
+
+.post-form button:hover {
+  background-color: #165ec6;
+}
+
+/* Individual Posts */
+.post {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+/* Post Header */
+.post-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.post .profile-pic {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.post h4 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: bold; /* Bold the username */
+}
+
+/* Post Content */
+.post p {
+  font-size: 14px;
+  color: #333;
+}
+
+/* Highlight Specific Texts */
+.post p strong {
+  font-weight: bold; /* Make key parts of the post bold */
+}
+
+/* Media (Images & Videos) - Maintain Original Aspect Ratio */
+.post-media {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 500px;
+  object-fit: contain; /* Prevents distortion, keeps original ratio */
+  display: block;
+  margin: 10px auto;
+}
+
+/* Post Actions (Like & Comment Buttons) */
+.post-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.post-actions button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  color: #555;
+}
+
+.post-actions button:hover {
+  color: #1877f2;
+}
+
+.post-actions .btn-primary {
+  color: #1877f2;
+  font-weight: bold; /* Make 'Like' and interactions bold */
+}
+
+.post-actions .btn-secondary {
+  color: #65676b;
+}
+
+/* Likes & Comments */
+.likes-list, .comments-list {
+  padding-left: 40px;
+  font-size: 14px;
+}
+
+.comments-list li {
+  list-style: none;
+  margin-top: 5px;
+}
+
+.comments-list strong {
+  color: #1877f2;
+  font-weight: bold; /* Highlight the names in comments */
+}

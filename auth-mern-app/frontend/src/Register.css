@@ -1,0 +1,205 @@
+/* Logo Styling with Circular White Background */
+.register-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 160px; /* Adjust as needed */
+  height: 160px;
+  margin: 30px auto 20px; /* Extra top margin to prevent clipping */
+  background-color: white; /* White circular background */
+  border-radius: 50%; /* Perfect circle */
+  box-shadow: 0 4px 10px rgba(255, 215, 0, 0.3); /* Soft golden glow */
+  padding: 10px; /* Space inside the circle */
+  position: relative; /* Ensures it stays in place */
+  z-index: 5; /* Keeps it above expanding elements */
+}
+
+/* Ensure the image fits properly */
+.register-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Makes sure no part of the image is cropped */
+  border-radius: 50%; /* Ensures rounded image */
+}
+
+/* Container Styling */
+.register-container {
+  max-width: 600px;
+  margin: 80px auto 50px; /* Increased top margin to prevent pushing the logo */
+  padding: 30px;
+  background: linear-gradient(135deg, #002147, #0a3d62); /* Dark blue shades */
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+  z-index: 1;
+}
+
+.register-container h1 {
+  font-size: 28px;
+  font-weight: bold;
+  color: #FFD700; /* Golden */
+  margin-bottom: 10px;
+}
+
+.register-container p {
+  font-size: 16px;
+  color: #f1f1f1;
+  margin-bottom: 15px;
+}
+
+.role-selection {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.role-selection button {
+  background: #FFD700;
+  color: #002147;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 12px 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.role-selection button:hover {
+  background: #ffcc00;
+  transform: scale(1.05);
+}
+
+.register-form {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.register-form h2 {
+  color: #FFD700;
+  margin-bottom: 15px;
+}
+
+.register-form label {
+  display: block;
+  text-align: left;
+  font-size: 14px;
+  font-weight: bold;
+  margin: 10px 0 5px;
+  color: #fff;
+}
+
+.register-form input,
+.register-form select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #FFD700;
+  border-radius: 5px;
+  background: #f1f1f1;
+  font-size: 14px;
+  color: #002147;
+}
+
+.register-form input:focus,
+.register-form select:focus {
+  border-color: #ffcc00;
+  outline: none;
+}
+
+.register-form button[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  background: #FFD700;
+  color: #002147;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: 0.3s;
+}
+
+.register-form button[type="submit"]:hover {
+  background: #ffcc00;
+  transform: scale(1.05);
+}
+
+/* Subject list */
+.subject-list {
+  text-align: left;
+  margin-top: 10px;
+}
+
+.subject-list li {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 8px;
+  border-radius: 5px;
+  margin: 5px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.subject-list button {
+  background: transparent;
+  border: none;
+  color: #FFD700;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.subject-list button:hover {
+  color: #ffcc00;
+}
+
+/* Dropdown */
+.dropdown-list {
+  background: #fff;
+  color: #002147;
+  border: 1px solid #FFD700;
+  border-radius: 5px;
+  position: absolute;
+  width: calc(100% - 20px);
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 10;
+}
+
+.dropdown-list li {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.dropdown-list li:hover {
+  background: #968735;
+  color: #002147;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .register-container {
+      width: 90%;
+      padding: 20px;
+      margin-top: 100px; /* Extra space on smaller screens */
+  }
+
+  .role-selection {
+      flex-direction: column;
+  }
+
+  .role-selection button {
+      width: 100%;
+  }
+
+  .register-logo {
+      width: 140px;
+      height: 140px;
+      margin-top: 20px; /* Prevents it from getting cut */
+  }
+}

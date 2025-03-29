@@ -1,0 +1,158 @@
+/* General Styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f4f4f9;
+  margin: 0;
+  padding: 0;
+}
+
+/* Search Bar */
+.searching {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  background-color: #ffffff;
+  position: relative;
+  z-index: 10;
+}
+
+.search-box1 {
+  display: flex;
+  align-items: center;
+  border: 2px solid #6c63ff;
+  border-radius: 25px;
+  padding: 10px 15px;
+  width: 50%;
+  max-width: 600px;
+  background: #fff;
+  position: relative;
+  z-index: 10;
+}
+
+.search-icon {
+  color: #6c63ff;
+  margin-right: 10px;
+}
+
+.search-box1 input {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 16px;
+}
+
+/* Main Content */
+.home-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.internship-container {
+  width: 80%;
+  max-width: 1200px;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Section Headings */
+h1, h2 {
+  text-align: center;
+  font-weight: 600;
+  color: #333;
+  padding: 10px 0;
+}
+
+h1 {
+  font-size: 30px;
+}
+
+h2 {
+  font-size: 26px;
+  border-bottom: 3px solid #6c63ff;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+/* Internship Cards */
+.internship-card {
+  background: linear-gradient(135deg, #e0e0ff, #ffffff);
+  border: 1px solid #bbb;
+  border-radius: 12px;
+  padding: 18px;
+  margin: 18px 0;
+  transition: 0.3s ease-in-out;
+}
+
+.internship-card:hover {
+  box-shadow: 0px 4px 12px rgba(108, 99, 255, 0.5);
+  transform: translateY(-5px);
+}
+
+.internship-card h3 {
+  font-size: 22px;
+  color: #6c63ff;
+}
+
+.internship-card p {
+  font-size: 18px;
+  color: #444;
+  margin: 6px 0;
+}
+
+/* Buttons */
+button {
+  background-color: #6c63ff;
+  color: #ffffff;
+  padding: 12px 18px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+button:hover {
+  background-color: #5148d6;
+}
+
+/* Application Form */
+.application-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: #f0f0ff;
+  padding: 18px;
+  border-radius: 12px;
+}
+
+.application-form label {
+  font-weight: 600;
+  color: #333;
+}
+
+.application-form input, .application-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #bbb;
+  border-radius: 6px;
+}
+
+.application-form button {
+  align-self: flex-start;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .search-box1 {
+      width: 80%;
+  }
+  
+  .internship-container {
+      width: 90%;
+  }
+}
