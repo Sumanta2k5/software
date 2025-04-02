@@ -1,83 +1,96 @@
-/* General Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, sans-serif;
-  background-color: #f0f2f5;
+/* Ensure the body and root container allow scrolling */
+html, body {
+  height: 100%;
+
+  overflow: auto; /* Allows scrolling */
 }
 
-/* Main Container */
+/* Fix home container layout */
 .home1-container {
   display: flex;
-  justify-content: space-between;
+  flex-direction: row;
+  justify-content: center;
   background-color: #f0f2f5;
-  padding-top: 80px; /* Prevents text box from hiding under navbar */
+  min-height: 100vh; /* Make sure it takes at least full screen height */
+  overflow-y: auto; /* Allows scrolling if content exceeds screen */
+  padding-top: 80px; /* Prevents header from overlapping content */
+  margin-top: 50px;
 }
 
-/* Left Sidebar (Profile Card) */
-.left-sidebar {
-  position: fixed;
-  top: 80px; /* Adjusted based on navbar height */
-  left: 20px;
-  width: 250px;
+/* Ensure the main content is properly visible */
+.main-content1{
+  flex-grow: 1;
+  overflow-y: auto;
+  max-height: calc(100vh - 70px); /* Adjust height dynamically */
+  padding-bottom: 20px;
+}
+
+/* Make sure the header is fixed properly */
+
+
+  /* Left Sidebar */
+  .left-sidebar {
+    position: fixed;
+    top: 80px; /* Adjusted based on navbar height */
+    left: 20px;
+    width: 500px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    
+  }
+  
+  .profile-card {
+    text-align: center;
+  }
+  .profile-card h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+    font-weight: bold; /* Make username bold */
+  }
+  
+  .profile-card p {
+    font-size: 14px;
+    color: gray;
+  }
+  
+  .profile-pic {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto 10px;
+    object-fit: cover;
+  }
+  
+  .sidebar-links {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .sidebar-links li {
+    padding: 8px;
+    cursor: pointer;
+  }
+  
+  /* Main Content */
+  .home1-container.main-content1 {
+    /* Leaves space for fixed profile card */
+   width: 950px; /* Adjust based on screen size */
+   display: block;
+   max-width: 100%;
+   margin-top: 50px;
+ }
+ .post-form {
   background: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  text-align: center;
-}
-
-.profile-pic {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  display: block;
-  margin: 0 auto 10px;
-  object-fit: cover;
-}
-
-.profile-card h3 {
-  font-size: 18px;
-  margin-bottom: 5px;
-  font-weight: bold; /* Make username bold */
-}
-
-.profile-card p {
-  font-size: 14px;
-  color: gray;
-}
-
-.profile-card button {
-  background-color: #1877f2;
-  color: white;
-  border: none;
-  padding: 8px 15px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 14px;
-}
-
-.profile-card button:hover {
-  background-color: #165ec6;
-}
-
-/* Main Content */
-.main-content {
-  margin-left: 300px; /* Leaves space for fixed profile card */
-  width: 600px; /* Adjust based on screen size */
-  max-width: 100%;
-}
-
-/* Post Form */
-.post-form {
-  background: white;
+  width: 600px;
   padding: 15px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
 }
-
 .post-form textarea {
   width: 100%;
   height: 60px;
@@ -103,48 +116,36 @@
 .post-form button:hover {
   background-color: #165ec6;
 }
-
-/* Individual Posts */
-.post {
-  background: white;
-  padding: 15px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
-}
-
-/* Post Header */
-.post-header {
-  display: flex;
-  align-items: center;
-  margin-bottom: 10px;
-}
-
-.post .profile-pic {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  margin-right: 10px;
-}
-
-.post h4 {
-  margin: 0;
-  font-size: 16px;
-  font-weight: bold; /* Bold the username */
-}
-
-/* Post Content */
-.post p {
-  font-size: 14px;
-  color: #333;
-}
-
-/* Highlight Specific Texts */
-.post p strong {
-  font-weight: bold; /* Make key parts of the post bold */
-}
-
-/* Media (Images & Videos) - Maintain Original Aspect Ratio */
+  .post-box {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+  }
+  
+  .post-actions {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+  }
+  
+  /* Post Styling */
+  .post {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 20px;
+    max-width: 700px;
+    
+   
+  }
+  
+  .post-img {
+    width: 100%;
+    border-radius: 8px;
+    margin-top: 10px;
+    
+  }
+  /* Media (Images & Videos) - Maintain Original Aspect Ratio */
 .post-media {
   width: auto;
   height: auto;
@@ -155,6 +156,46 @@
   margin: 10px auto;
 }
 
+  
+  /* Right Sidebar */
+  .right-sidebar {
+    width: 25%;
+    background: #d4d8dd;
+    padding: 15px;
+    border-radius: 8px;
+  }
+  
+  .sponsored {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  button {
+    color: white;
+    border: none;
+    padding: 8px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .post-media {
+    max-width: 800px; /* Reduce image width */
+    max-height: 800px; /* Reduce image height */
+    object-fit: cover; /* Crop image instead of stretching */
+    display: block;
+    align-self: center; /* Center image */
+    margin: 10px 0;
+   
+    border-radius: 8px; /* Rounded corners */
+}
+.links{
+  text-decoration: none;
+  color: #000;
+  
+}
+
+.links h4:hover {
+  color: rgb(39, 39, 118);
+}
 /* Post Actions (Like & Comment Buttons) */
 .post-actions {
   display: flex;
@@ -169,8 +210,7 @@
   border: none;
   cursor: pointer;
   font-size: 14px;
-  display: flex;
-  align-items: center;
+ 
   color: #555;
 }
 

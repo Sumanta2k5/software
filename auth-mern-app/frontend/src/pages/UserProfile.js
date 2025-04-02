@@ -3,7 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import { handleError } from '../utils';
 import Header from './Header';
-import '../Profile.css';
+import '../userProfile.css';
 
 function UserProfile() {
     const { userId } = useParams();
@@ -45,7 +45,7 @@ function UserProfile() {
     };
 
     return (
-        <div className="home-container">
+        <div className="home-container4">
             <Header />
             <div className="main-content">
                 {user ? ( // ✅ Check if user is not null before rendering profile

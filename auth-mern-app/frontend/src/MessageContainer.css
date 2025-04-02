@@ -1,31 +1,34 @@
 .message-container {
-    min-width: 450px;
+    width: 70vw;  /* Full width of viewport */
+    height: 80vh; /* Full height of viewport */
     display: flex;
     flex-direction: column;
 }
 
 .message-header {
-    background-color: #64748b; /* Slate-500 */
+    background-color: #f0f2f5; /* Slate-500 */
     padding: 8px 16px;
     margin-bottom: 8px;
 }
 
 .message-header .label-text {
-    font-size: 14px;
-    color: #e2e8f0; /* Light gray */
+    font-size: 20px;
+    color: #000; /* Light gray */
 }
 
 .message-header .recipient-name {
     font-weight: bold;
-    color: #1e293b; /* Dark gray */
+    color: #000; /* Dark gray */
+    font-size: 20px;
+    margin-top: -2px;
 }
 
 .no-chat-selected {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%;
-    height: 100%;
+    width: 75vw; /* Full viewport width */
+    height: 100vh; /* Full viewport height */
 }
 
 .no-chat-content {

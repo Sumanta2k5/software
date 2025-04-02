@@ -26,7 +26,7 @@
 
 .skeleton-text {
     height: 16px;
-    width: 160px;
+    width: 460px;
     background-color: #374151; /* Gray-700 */
     border-radius: 4px;
     animation: skeleton-loading 1.5s infinite linear;

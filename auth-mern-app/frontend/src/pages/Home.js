@@ -5,7 +5,7 @@ import "../Home.css";
 import Header from "./Header"; 
 import { Link } from 'react-router-dom';
 import PostForm from "./PostForm";
-
+//import PersonalCalendar from './PersonalCalendar';
 
 function Home() {
     const [loggedInUser, setLoggedInUser] = useState('');
@@ -143,15 +143,15 @@ function Home() {
 
 
                             <div className="post-actions">
-                                <button className= "btn btn-primary"
+                                <button 
                                     onClick={() => handleLike(post._id)}
                                     disabled={post.likes.some(like => like._id === userId)}
-                                    //style={{ backgroundColor: post.likes.some(like => like._id === userId) ? "gray" : "blue" }}
+                                    style={{ backgroundColor: post.likes.some(like => like._id === userId) ? "gray" : "blue" }}
                                 >
                                     👍 {post.likes.some(like => like._id === userId) ? "Liked" : "Like"} ({post.likes.length || 0})
                                 </button>
 
-                                <button className= "btn btn-secondary" onClick={() => setShowLikes(showLikes === post._id ? null : post._id)}>👥 View Likes</button>
+                                <button onClick={() => setShowLikes(showLikes === post._id ? null : post._id)}>👥 View Likes</button>
 
                                 {showLikes === post._id && (
                                     <ul className="likes-list">
@@ -189,6 +189,7 @@ function Home() {
                             </div>
                         </div>
                     ))}
+
                 </div>
             </div>
 

@@ -7,6 +7,9 @@ const sendMessage = async (req, res) => {
 		const { message } = req.body;
 		const { id: receiverId } = req.params;
 		const senderId = req.user._id;
+		console.log("senderId",senderId);
+		console.log("receiverId",receiverId);
+
 
 		let conversation = await Conversation.findOne({
 			participants: { $all: [senderId, receiverId] },
@@ -47,14 +50,17 @@ const getMessages = async (req, res) => {
 	try {
 		const { id: userToChatId } = req.params;
 		const senderId = req.user._id;
+		console.log("senderId",senderId);
+		console.log("receiverId",userToChatId);
 
 		const conversation = await Conversation.findOne({
 			participants: { $all: [senderId, userToChatId] },
 		}).populate("messages"); // NOT REFERENCE BUT ACTUAL MESSAGES
 
 		if (!conversation) return res.status(200).json([]);
-
+console.log("conversation",conversation);
 		const messages = conversation.messages;
+		console.log("messages",messages);
 
 		res.status(200).json(messages);
 	} catch (error) {

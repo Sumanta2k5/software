@@ -3,31 +3,40 @@ body {
   font-family: 'Poppins', sans-serif;
   background-color: #f4f4f9;
   margin: 0;
-  padding: 0;
 }
 
+/* Search Bar */
+/* Search Bar */
 /* Search Bar */
 .searching {
   display: flex;
   justify-content: center;
   padding: 20px;
   background-color: #ffffff;
-  position: relative;
-  z-index: 10;
+  position: fixed; /* Makes it stay below the header */
+  top: 61px; /* Adjust according to header height */
+  left: 50%;
+  transform: translateX(-50%); /* Centers it horizontally */
+  width: 80%; /* Same as internship container */
+  max-width: 1200px; /* Same max width as internship container */
+  z-index: 10; /* Ensures it's above other elements */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px; /* Matches internship container */
 }
 
+/* Search Box */
 .search-box1 {
   display: flex;
   align-items: center;
   border: 2px solid #6c63ff;
   border-radius: 25px;
   padding: 10px 15px;
-  width: 50%;
-  max-width: 600px;
+  width: 100%; /* Makes it take full width inside the container */
   background: #fff;
   position: relative;
   z-index: 10;
 }
+
 
 .search-icon {
   color: #6c63ff;
@@ -41,22 +50,29 @@ body {
   font-size: 16px;
 }
 
-/* Main Content */
-.home-container {
+/* Adjust main content to avoid overlap */
+.home-container5 {
   display: flex;
   justify-content: center;
-  margin-top: 20px;
+  /* Adjusted so content doesn't overlap the search bar */
   position: relative;
   z-index: 1;
+  padding-top: 450px;
 }
-
-.internship-container {
-  width: 80%;
+.intern-form{
+ 
+  justify-content: center;
+  padding-top: 1700px;
+}
+.internship-container1{
+  width: 80vw;
   max-width: 1200px;
   background-color: #ffffff;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  
+  z-index: -1;
 }
 
 /* Section Headings */
@@ -125,7 +141,7 @@ button:hover {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  background: #f0f0ff;
+  background: #a0a0ac;
   padding: 18px;
   border-radius: 12px;
 }
@@ -145,6 +161,7 @@ button:hover {
 .application-form button {
   align-self: flex-start;
 }
+
 
 /* Responsive Design */
 @media (max-width: 768px) {

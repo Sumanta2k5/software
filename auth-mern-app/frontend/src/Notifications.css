@@ -1,17 +1,16 @@
 /* Notifications.css */
 /* Apply background only to the notifications page */
 .notifications-wrapper {
-    background: url("./bg2.jpg") no-repeat center center fixed;
-    background-size: cover;
+    
     min-height: 100vh; /* Ensure it covers the full page */
     display: flex;
+    width: 80vw;
     
     padding: 2rem;
   }
   .notifications-container {
     padding: 1.5rem;
     width: 100%;
-    max-width: 60rem;
     margin: 2rem auto;
     margin-top: 80px;
     background: rgba(255, 255, 255, 0.8); /* Reduced opacity */

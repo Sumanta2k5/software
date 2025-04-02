@@ -74,7 +74,6 @@ const Header = () => {
                         <div className="dropdown-menu">
                             <Link to="/Internships" className="dropdown-item">Internships</Link>
                             <Link to="/hackathons" className="dropdown-item">Hackathons</Link>
-                            <Link to="/jobs" className="dropdown-item">Jobs</Link>
                         </div>
                     )}
                 </div>

@@ -205,14 +205,14 @@ const Internships = () => {
 )}
 
         </div>
-         <div className="home-container">
+         <div className="home-container5">
       <Header/>
-        <div className="internship-container">
+        <div className="internship-container1">
       <h1>Internships</h1>
 
 
       {userRole === "Professor" || userRole === "Alumni" ? (
-        <div>
+        <div className="intern-form">
           <h2>Post an Internship</h2>
           <form onSubmit={handleSubmit}>
             <label>Type:</label>

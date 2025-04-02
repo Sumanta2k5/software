@@ -33,7 +33,7 @@ const login= async (req, res) => {
 
 
         const jwtToken=jwt.sign({email:user.email,_id:user._id},process.env.JWT_SECRET,{expiresIn:'24h'});
-        res.status(200).json({ message: "Login success" ,success:true,jwtToken,email,name:user.name,userId: user._id,role:user.role});
+        res.status(200).json({ message: "Login success" ,success:true,jwtToken,email,name:user.name,userId: user._id,role:user.role,profilePic:user.profilePic});
     }
     catch (error) {
         res.status(500).json({ message: "Internal server error" ,success:false});   

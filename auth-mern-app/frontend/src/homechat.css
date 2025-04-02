@@ -2,23 +2,25 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px;
-    left:20px;
+    justify-content: center; /* Center content vertically */
+    padding: 100px 100px; /* Remove extra padding */
+    margin: 0;
+    width: 100vw;
+    height: 100vh; /* Ensure full viewport coverage */
 }
 
 .chat-container {
     display: flex;
-    width: 100%;
-    max-width: 900px;
-    height: 450px;
-    border-radius: 10px;
+    width: 90vw;  /* Full width of viewport */
+    height: 100vh; /* Full height of viewport */
+    border-radius: 0; /* Optional: remove border-radius for full coverage */
     overflow: hidden;
-    background-color: rgba(75, 85, 99, 0.2); /* Gray-400 with opacity */
+    background-color: rgba(218, 228, 241, 0.85); /* Gray-400 with opacity */
     backdrop-filter: blur(10px);
 }
 
 @media (min-width: 768px) {
     .chat-container {
-        height: 550px;
+        height: 100vh; /* Maintain full height on larger screens */
     }
 }

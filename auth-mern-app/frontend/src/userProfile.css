@@ -1,0 +1,137 @@
+/* General Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+}
+
+/* Main Container */
+.home-container4 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 80px; /* Adjust to prevent overlap with header */
+    width:80vw
+}
+
+/* Profile Card */
+.profile-card {
+    background: linear-gradient(135deg, #ffffff, #e0e0ff);
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    width: 80%;
+    max-width: 500px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    align-self: start;
+}
+
+.profile-pic {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #6c63ff;
+    margin-bottom: 10px;
+}
+
+.profile-card h3 {
+    font-size: 24px;
+    color: #333;
+}
+
+.profile-card p {
+    font-size: 16px;
+    color: #555;
+    margin: 6px 0;
+}
+
+.profile-card a {
+    display: inline-block;
+    margin-top: 10px;
+    color: #6c63ff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.profile-card a:hover {
+    text-decoration: underline;
+}
+
+/* Profile Posts */
+.profile-posts {
+    width: 200%;
+    max-width: 900px;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.profile-posts h2 {
+    font-size: 22px;
+    color: #333;
+    border-bottom: 3px solid #6c63ff;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* Post Card */
+.post-card {
+    background: #f0f0ff;
+    border: 1px solid #bbb;
+    border-radius: 12px;
+    padding: 15px;
+    margin: 15px 0;
+    text-align: left;
+    transition: 0.3s ease-in-out;
+}
+
+.post-card:hover {
+    box-shadow: 0px 4px 12px rgba(108, 99, 255, 0.5);
+    transform: translateY(-3px);
+}
+
+.post-image {
+    width: 100%;
+    max-height: 900px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.post-video {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.post-card p {
+    font-size: 16px;
+    color: #444;
+    margin: 5px 0;
+}
+
+.post-card strong {
+    color: #6c63ff;
+}
+
+.post-card small {
+    color: #777;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .profile-card,
+    .profile-posts {
+        width: 90%;
+    }
+    
+    .post-card {
+        padding: 12px;
+    }
+}

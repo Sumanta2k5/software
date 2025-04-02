@@ -45,6 +45,8 @@ function Login() {
                localStorage.setItem('userId', result.userId);
                localStorage.setItem('profilePic', result.profilePic);
                console.log(result);
+               localStorage.setItem("chat-user", JSON.stringify(result));
+
                 setTimeout(() => { if (result.role) {
                     navigate('/home');  // ✅ If role exists, go to home page
                 } else {
