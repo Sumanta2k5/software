@@ -3,96 +3,90 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #dee4ee; /* Dark Blue Background */
-    color: white;
+    background-color: #ffffff; /* Fully White Background */
+    color: black;
     padding: 20px;
     min-height: 100vh;
-  }
-  
-  /* Title */
-  .calendar-title {
+}
+
+/* Title */
+.cal_title {
     font-size: 26px;
     margin-bottom: 20px;
     font-weight: bold;
-    color: #e8eceb; /* Bright Teal for contrast */
-  }
-  
-  /* Custom Calendar */
-  .custom-calendar {
-    background: #112240; /* Slightly lighter dark blue */
+    color: rgb(218, 213, 213); /* Black Text */
+}
+
+/* Custom Calendar */
+.custom-calendar {
+    background: #ffffff; /* White Background */
     border-radius: 10px;
     padding: 15px;
-    box-shadow: 0px 4px 15px rgba(0, 255, 255, 0.2); /* Subtle glow effect */
-  }
-  .cal_title
-{
-    font-size: 24px;
-    font-weight: bold;
-    color: #64ffda; /* Teal */
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  .cal_date
-{
-    font-size: 18px;
-    color: #e8eceb; /* Light Gray */
-    text-align: center;
-    margin-bottom: 10px;
-  }
-  
-  .cal_event
-{
-    font-size: 16px;
-    color: #e8eceb; /* Light Gray */
-    text-align: center;
-    margin-bottom: 5px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1); /* Light Shadow */
 }
-  
-  /* Calendar Navigation */
-  .react-calendar__navigation {
-    background: #1e3a5f; /* Deep blue */
-    color: white;
+
+/* Calendar Navigation */
+.react-calendar__navigation {
+    background: #ffffff; /* White Background */
+    color: black;
     border-radius: 5px;
     padding: 5px;
-  }
-  
-  .react-calendar__navigation button {
-    color: white;
+}
+
+/* Buttons & Month Name */
+.react-calendar__navigation button {
+    color: black;
     font-weight: bold;
     background: none;
     border: none;
     padding: 10px;
     cursor: pointer;
+}
+
+.react-calendar__navigation button:hover {
+    color: gray; /* Subtle hover effect */
+}
+
+/* Month Name */
+.react-calendar__navigation span {
+    color: black; /* Black Month Name */
+    font-weight: bold;
+    font-size: 18px;
+}
+.today-date {
+    background-color: brown !important;
+    color: white !important;
+    font-weight: bold;
+    border-radius: 8px;
   }
   
-  .react-calendar__navigation button:hover {
-    color: #64ffda; /* Teal hover effect */
-  }
-  
-  /* Calendar Tiles */
-  .react-calendar__tile {
-    background: #233554; /* Dark Grayish Blue */
-    color: white;
+
+/* Calendar Tiles */
+.react-calendar__tile {
+    background: #ffffff; /* White Background */
+    color: black;
     border-radius: 8px;
     transition: 0.3s ease-in-out;
     padding: 12px;
     text-align: center;
     font-weight: bold;
-  }
-  
-  .react-calendar__tile:enabled:hover {
-    background: #1e3a5f; /* Slightly lighter hover effect */
-  }
-  
-  .react-calendar__tile--active {
-    background: #64ffda; /* Teal Active Day */
-    color: #0a192f; /* Dark Text */
+    border: 1px solid #ccc; /* Light Border */
+}
+
+/* Hover Effect */
+.react-calendar__tile:enabled:hover {
+    background: #f0f0f0; /* Light Gray on Hover */
+}
+
+/* Active Day */
+.react-calendar__tile--active {
+    background: #e0e0e0; /* Light Gray Active Day */
+    color: black;
     font-weight: bold;
-  }
-  
-  /* Event Markers */
-  .event-marker {
+}
+
+/* Event Markers */
+.event-marker {
     font-size: 12px;
     font-weight: bold;
     padding: 5px;
@@ -100,25 +94,75 @@
     text-align: center;
     display: block;
     margin-top: 5px;
-  }
-  
-  /* Approved Events (Red for urgency) */
-  .approved {
-    background-color: #ff4757;
-    color: white;
-    padding: 3px 8px;
-  }
-  
-  /* Pending Events (Golden Yellow) */
-  .pending {
-    background-color: #ffcc00;
+}
+
+/* Approved Events */
+.approved {
+    background-color: #ff6666; /* Soft Red */
     color: black;
     padding: 3px 8px;
+}
+
+/* Pending Events */
+.pending {
+    background-color: #ffcc00; /* Golden Yellow */
+    color: black;
+    padding: 3px 8px;
+}
+
+/* Calendar Borders */
+.react-calendar {
+    border: 2px solid #ccc; /* Light Gray Border */
+    border-radius: 10px;
+}
+/* Event Marker (Small Indicator) */
+.event-marker {
+    width: 12px;
+    height: 12px;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    border-radius: 50%;
   }
   
-  /* Calendar Borders */
-  .react-calendar {
-    border: 2px solid #64ffda; /* Subtle border */
-    border-radius: 10px;
+  /* Tooltip on hover (Shows full event title) */
+  .event-marker::after {
+    content: attr(data-title);
+    position: absolute;
+    bottom: 130%;  /* Position above the tile */
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(230, 243, 45, 0.9);
+    color: rgb(14, 13, 13);
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    white-space: normal;  /* Allow multi-line text */
+    width: max-content;
+    max-width: 220px;  /* Prevent too wide tooltips */
+    text-align: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+    z-index: 9999; /* Ensure it's above all other elements */
+  }
+  
+  /* Show event name when hovered */
+  .event-marker:hover::after {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  /* Fix potential clipping by allowing overflow */
+  .react-calendar__tile {
+    overflow: visible !important; 
+    position: relative;
+  }
+  
+  /* Highlight today's date */
+  .today-date {
+    background: brown !important;
+    color: white !important;
+    border-radius: 50%;
   }
   

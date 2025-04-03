@@ -39,6 +39,7 @@ router.get("/:id", async (req, res) => {
             program:user.program || "",
             subjects:user.subjects || [],
             handlePage:user.handlePage || "",
+            _id:user._id,
 
             // other user fields
         });
@@ -57,4 +58,15 @@ router.get("/:id/posts", async (req, res) => {
     }
 }
 );
+router.get("/:id/calendar-events", async (req, res) => {
+    try {
+        const user = await User.findById(req.params.id);
+        if (!user) {
+            return res.status(404).json({ message: "User not found" });
+        }
+        res.json(user.appliedEvents || []);
+    } catch (err) {
+        res.status(500).json({ message: err.message });
+    }
+});
 module.exports = router;

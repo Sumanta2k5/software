@@ -10,6 +10,8 @@ function UserProfile() {
     const [user, setUser] = useState(null);
     const [userPosts, setUserPosts] = useState([]);
     const navigate = useNavigate();
+    const [internships, setInternships] = useState([]);
+    const [hackathons, setHackathons] = useState([]);
 
     useEffect(() => {
         fetchProfile();
@@ -43,7 +45,24 @@ function UserProfile() {
             handleError(err);
         }
     };
-
+    useEffect(() => {
+            fetch("http://localhost:8080/interns/all")
+              .then(res => res.json())
+              .then(data => setInternships(data));
+          }, []);
+    console.log(internships);
+    
+    const postedInternships = internships.filter((intern) => intern.postedBy._id === user._id);
+     useEffect(() => {
+            fetch("http://localhost:8080/hackathons/all")
+              .then(res => res.json())
+              .then(data => setHackathons(data));
+          }, []);
+    
+    const postedHackathons = hackathons.filter((hack) => hack.postedBy._id === userId);
+console.log(postedHackathons);
+console.log(postedInternships);
+console.log(user);
     return (
         <div className="home-container4">
             <Header />
@@ -51,7 +70,7 @@ function UserProfile() {
                 {user ? ( // ✅ Check if user is not null before rendering profile
                     <div className="profile-card">
                         <img
-                            src={user.profilePic || 'default-profile.jpg'}
+                            src={user.profilePic || '/default-profile.jpg'}
                             alt="Profile"
                             className="profile-pic"
                         />
@@ -79,7 +98,7 @@ function UserProfile() {
                 {/* Check if mediaUrl exists */}
                 {post.mediaUrl && (
                     post.mediaUrl.match(/\.(jpeg|jpg|gif|png)$/i) ? (
-                        <img src={post.mediaUrl} alt="Post media" className="post-image" />
+                        <img src={post.mediaUrl } alt="Post media" className="post-image" />
                     ) : (
                         <video controls className="post-video">
                             <source src={post.mediaUrl} type="video/mp4" />
@@ -98,6 +117,59 @@ function UserProfile() {
         <p>No posts to display</p>
     )}
 </div>
+{user?(
+<div className="profile-internships">
+         
+            {(user.role==="Professor"  || user.role==="Alumni")&& (
+               <>
+                    <h2>Posted Internships</h2>
+                    {postedInternships.length > 0 ? (
+                        postedInternships.map((internship) => (
+                            <div key={internship._id} className="internship-card">
+                                <h3>{internship.topic}</h3>
+                                <p>{internship.details}</p>
+                                <p><strong>Posted by:</strong> {internship.postedBy.name}</p>
+                                <p><strong>Applications:</strong> {internship.studentsApplied.length}</p>
+                            </div>
+                        ))
+                    ) : (
+                        <p>No posted internships</p>
+                    )}
+              </>
+            )}
+            
+            
+            
+</div>
+            
+):(
+    <p>Loading profile...</p>
+)}
+
+{user?(
+<div className="profile-hackathons">
+    {(user.role==="Professor"  || user.role==="Alumni")&& (
+               <>
+                    <h2>Posted Hackathons</h2>
+                    {postedHackathons.length > 0 ? (
+                        postedHackathons.map((hackathon) => (
+                            <div key={hackathon._id} className="hackathon-card">
+                                <h3>{hackathon.topic}</h3>
+                                <p>{hackathon.details}</p>
+                                <p><strong>Posted by:</strong> {hackathon.postedBy.name}</p>
+                                <p><strong>Applications:</strong> {hackathon.studentsApplied.length}</p>
+                            </div>
+                        ))
+                    ) : (
+                        <p>No posted hackathons</p>
+                    )}
+              </>
+            )}
+            </div>
+):(
+    <p>Loading profile...</p>
+)}
+
 
             </div>
             <ToastContainer />

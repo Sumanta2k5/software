@@ -11,14 +11,14 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 80px; /* Adjust to prevent overlap with header */
-    width:80vw
+    margin-top: 80px; /* Prevent overlap with header */
+    width: 90vw;
 }
 
 /* Profile Card */
 .profile-card {
     background: linear-gradient(135deg, #ffffff, #e0e0ff);
-    border: 1px solid #ccc;
+    border: none;
     border-radius: 12px;
     padding: 20px;
     text-align: center;
@@ -26,7 +26,7 @@ body {
     max-width: 500px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
-    align-self: start;
+    align-self: flex-start;
 }
 
 .profile-pic {
@@ -41,12 +41,13 @@ body {
 .profile-card h3 {
     font-size: 24px;
     color: #333;
+    margin-bottom: 5px;
 }
 
 .profile-card p {
     font-size: 16px;
     color: #555;
-    margin: 6px 0;
+    margin: 4px 0;
 }
 
 .profile-card a {
@@ -55,21 +56,24 @@ body {
     color: #6c63ff;
     text-decoration: none;
     font-weight: 600;
+    transition: 0.3s ease-in-out;
 }
 
 .profile-card a:hover {
     text-decoration: underline;
+    color: #5248db;
 }
 
 /* Profile Posts */
 .profile-posts {
-    width: 200%;
+    width: 100%;
     max-width: 900px;
     background: #ffffff;
     padding: 20px;
     border-radius: 12px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
+    margin-bottom: 20px;
 }
 
 .profile-posts h2 {
@@ -83,12 +87,12 @@ body {
 /* Post Card */
 .post-card {
     background: #f0f0ff;
-    border: 1px solid #bbb;
     border-radius: 12px;
     padding: 15px;
     margin: 15px 0;
     text-align: left;
     transition: 0.3s ease-in-out;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05);
 }
 
 .post-card:hover {
@@ -96,16 +100,11 @@ body {
     transform: translateY(-3px);
 }
 
-.post-image {
-    width: 100%;
-    max-height: 900px;
-    object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 10px;
-}
-
+.post-image,
 .post-video {
     width: 100%;
+    max-height: 300px;
+    object-fit: cover;
     border-radius: 8px;
     margin-bottom: 10px;
 }
@@ -124,13 +123,71 @@ body {
     color: #777;
 }
 
+/* Internships and Hackathons */
+.profile-internships,
+.profile-hackathons {
+    width: 100%;
+    max-width: 900px;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.profile-internships h2,
+.profile-hackathons h2 {
+    font-size: 22px;
+    color: #333;
+    border-bottom: 3px solid #6c63ff;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.internship-card,
+.hackathon-card {
+    background: #f7f7ff;
+    border-radius: 12px;
+    padding: 15px;
+    margin: 10px 0;
+    text-align: left;
+    transition: 0.3s ease-in-out;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.internship-card:hover,
+.hackathon-card:hover {
+    box-shadow: 0px 4px 12px rgba(108, 99, 255, 0.5);
+    transform: translateY(-3px);
+}
+
+.internship-card h3,
+.hackathon-card h3 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.internship-card p,
+.hackathon-card p {
+    font-size: 16px;
+    color: #555;
+    margin: 4px 0;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
+    .home-container4 {
+        width: 95vw;
+    }
+
     .profile-card,
-    .profile-posts {
+    .profile-posts,
+    .profile-internships,
+    .profile-hackathons {
         width: 90%;
     }
-    
+
     .post-card {
         padding: 12px;
     }
