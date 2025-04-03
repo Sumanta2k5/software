@@ -5,7 +5,7 @@ import "../Home.css";
 import Header from "./Header"; 
 import { Link } from 'react-router-dom';
 import PostForm from "./PostForm";
-//import PersonalCalendar from './PersonalCalendar';
+import PersonalCalendar from './PersonalCalendar';
 
 function Home() {
     const [loggedInUser, setLoggedInUser] = useState('');
@@ -116,7 +116,7 @@ function Home() {
                     </div>
                 </div>
 
-                <div className="main-content">
+                <div className="main-contents">
                     <PostForm onPostSubmit={fetchPosts} />
 
                     {posts.map((post) => (
@@ -191,6 +191,9 @@ function Home() {
                     ))}
 
                 </div>
+                <div className="right-sidebar">
+                    <PersonalCalendar/>
+                    </div>
             </div>
 
             <ToastContainer />

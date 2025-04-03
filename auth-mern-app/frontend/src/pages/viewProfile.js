@@ -66,7 +66,7 @@ function ViewProfile() {
       }, []);
 
     const appliedHackathons = hackathons.filter((hackathon) =>
-        hackathon.applicants?.some((applicant) => applicant.student._id === userId)
+        hackathon.studentsApplied?.some((applicant) => applicant.student._id === userId)
       );
       const postedHackathons = hackathons.filter((hackathon) => hackathon.postedBy._id === userId);
 
@@ -151,7 +151,7 @@ function ViewProfile() {
               <p>{intern.details}</p>
               <p><strong>Posted by:</strong> {intern.postedBy?.name}</p>
               <p><strong>Status:</strong> 
-                {intern.studentsApplied.find((student) => student.student._id === userId).status === "Approved" ? 
+                {intern.studentsApplied.find((student) => student.student._id === userId)?.status === "Approved" ? 
                   " Approved ✅" : " Yet to be approved ⏳"}
               </p>
               <button disabled>Applied</button>
@@ -186,9 +186,10 @@ function ViewProfile() {
             <p>{hackathon.details}</p>
             <p><strong>Posted by:</strong> {hackathon.postedBy?.name}</p>
             <p><strong>Status:</strong> 
-              {hackathon.applicants.find((applicant) => applicant.student._id === userId).status === "Approved" ? 
-                " Approved ✅" : " Yet to be approved ⏳"}
-            </p>
+  {hackathon.applicants && hackathon.applicants.find((applicant) => applicant.student?._id === userId)?.status === "Approved" ? 
+    " Approved ✅" : " Yet to be approved ⏳"}
+</p>
+
             <button disabled>Applied</button>
           </div>
         ))}

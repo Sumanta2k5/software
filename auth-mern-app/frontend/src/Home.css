@@ -18,7 +18,7 @@ html, body {
 }
 
 /* Ensure the main content is properly visible */
-.main-content1{
+.main-contents{
   flex-grow: 1;
   overflow-y: auto;
   max-height: calc(100vh - 70px); /* Adjust height dynamically */
@@ -33,7 +33,7 @@ html, body {
     position: fixed;
     top: 80px; /* Adjusted based on navbar height */
     left: 20px;
-    width: 500px;
+    width: 400px;
     background: white;
     padding: 20px;
     border-radius: 10px;
@@ -76,12 +76,13 @@ html, body {
   }
   
   /* Main Content */
-  .home1-container.main-content1 {
+ .main-contents {
     /* Leaves space for fixed profile card */
    width: 950px; /* Adjust based on screen size */
    display: block;
    max-width: 100%;
    margin-top: 50px;
+   align-items: center;
  }
  .post-form {
   background: white;
@@ -160,9 +161,9 @@ html, body {
   /* Right Sidebar */
   .right-sidebar {
     width: 25%;
-    background: #d4d8dd;
     padding: 15px;
     border-radius: 8px;
+    background-color: #233554;
   }
   
   .sponsored {

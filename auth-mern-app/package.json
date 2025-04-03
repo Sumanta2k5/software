@@ -9,6 +9,7 @@
     "dependencies": {
         "dotenv": "^16.4.7",
         "nodemon": "^3.1.9",
+        "react-calendar": "^5.1.0",
         "react-hot-toast": "^2.5.2",
         "zustand": "^5.0.3"
     },
@@ -19,6 +20,7 @@
         "dev": "concurrently \"npm run backend\" \"npm run frontend\""
     },
     "devDependencies": {
-        "concurrently": "^9.1.2"
+        "concurrently": "^9.1.2",
+        "jest": "^27.5.1"
     }
 }

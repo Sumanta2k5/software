@@ -30,9 +30,15 @@ const Hackathons = () => {
         setHackathons(data)})
       .catch(error => console.error("Error fetching hackathons:", error));
   }, []);
- // console.log(hackathons);
-  
 
+  const availableHackathons= hackathons.filter(
+    (intern) => !intern.studentsApplied.some((student) => student.student._id === userId)
+  );
+  const appliedHackathons = hackathons.filter((hackathon) =>
+    hackathon.studentsApplied?.some((student) => student.student._id === userId))
+  const postedHackathons = hackathons.filter((hackathon) => hackathon.postedBy._id === userId);
+  
+  
   // Handle form input changes
   const handleInputChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -162,7 +168,7 @@ const Hackathons = () => {
 
       {/* Display Hackathons */}
       <h2>Available Hackathons</h2>
-      {hackathons.map((hackathon) => (
+      {availableHackathons.map((hackathon) => (
         <div key={hackathon._id} className="hackathon-card">
           <h3>{hackathon.topic}</h3>
           <p>{hackathon.details}</p>
@@ -199,6 +205,39 @@ const Hackathons = () => {
           <button onClick={handleSubmitApplication}>Submit Application</button>
           <button onClick={() => setApplyingHackathonId(null)}>Cancel</button>
         </div>
+      )}
+
+
+      {userRole === "Student" && appliedHackathons.length > 0 && (
+        <>
+          <h2>Applied Hackathons</h2>
+          {appliedHackathons.map((hackathon) => (
+            <div key={hackathon._id} className="hackathon-card">
+              <h3>{hackathon.topic}</h3>
+              <p>{hackathon.details}</p>
+              <p><strong>Posted by:</strong> {hackathon.postedBy?.name}</p>
+              <p><strong>Status:</strong> 
+                {hackathon.studentsApplied.find((student) => student.student._id === userId)?.status === "Approved" ? 
+                  " Approved ✅" : " Yet to be approved ⏳"}
+              </p>
+              <button disabled>Applied</button>
+            </div>
+          ))}
+        </>
+      )}
+      {(userRole === "Professor" || userRole==="Alumni" || userRole==="Student")&& postedHackathons.length > 0 && (
+        <>
+          <h2>Posted Hackathons</h2>
+          {postedHackathons.map((hackathon) => (
+            <div key={hackathon._id} className="hackathon-card">
+              <h3>{hackathon.topic}</h3>
+              <p>{hackathon.details}</p>
+              <p><strong>Posted by:</strong> {hackathon.postedBy?.name}</p>
+              <p><strong>Applications:</strong> {hackathon.studentsApplied.length}</p>
+              <button disabled>Posted</button>
+            </div>
+          ))}
+        </>
       )}
     </div>
   );
